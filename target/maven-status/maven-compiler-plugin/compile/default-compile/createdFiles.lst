@@ -8,6 +8,7 @@ br\com\caelum\Configurador.class
 br\com\caelum\JpaConfigurator.class
 br\com\caelum\dao\ProdutoDao.class
 br\com\caelum\CriadorDeProdutos.class
+br\com\caelum\TestaCache.class
 br\com\caelum\Inicializador.class
 br\com\caelum\model\Categoria.class
 br\com\caelum\dao\LojaDao.class

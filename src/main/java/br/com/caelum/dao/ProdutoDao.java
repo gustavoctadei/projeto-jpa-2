@@ -1,6 +1,5 @@
 package br.com.caelum.dao;
 
-import br.com.caelum.model.Categoria;
 import br.com.caelum.model.Loja;
 import java.util.List;
 
@@ -94,6 +93,9 @@ public class ProdutoDao {
         query.where( (Predicate[]) predicates.toArray(new Predicate[0]) );
         
         TypedQuery<Produto> typedQuery = em.createQuery(query);
+        
+        typedQuery.setHint("org.hibernate.cacheable", "true"); //Ativa o Cache nesta Query especifica
+        
         return typedQuery.getResultList();
     }
 

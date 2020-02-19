@@ -13,10 +13,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+//@Cache(usage = CacheConcurrencyStrategy.READ_WRITE) //Mais seguro contra Inconsistência de Dados, consome mais processamento
+//@Cache(usage = CacheConcurrencyStrategy.READ_ONLY) //Gasta menos processamento, porém maior risco de ter dados inconsistentes no Cache
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Produto {
 
     @Id
@@ -35,6 +40,7 @@ public class Produto {
     private double preco;
 
     @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private List<Categoria> categorias = new ArrayList<>();
 
     @Valid
