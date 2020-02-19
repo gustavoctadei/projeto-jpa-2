@@ -14,3 +14,4 @@ br\com\caelum\dao\LojaDao.class
 br\com\caelum\CriadorDeProdutos$1.class
 br\com\caelum\controller\EstatisticasController.class
 br\com\caelum\controller\LojaController.class
+br\com\caelum\TestaPool.class
